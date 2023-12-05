@@ -13,7 +13,7 @@ namespace YourFlightInstructor.controller
             SimData latestSimData = simDataList.First<SimData>();
             message = "";
 
-            if (CouldAndDark(simDataList))
+            if (ColdAndDark(simDataList))
             {
                 return message = "你好，我是你的飞行教员，今天我们进行起落航线练习。" +
                     "整个飞行都由你来操纵飞机，不过别担心，我会给你提示。" +
@@ -429,7 +429,7 @@ namespace YourFlightInstructor.controller
                 && data.OnAnyRunway == false;
         }
 
-        private bool CouldAndDark(List<SimData> simDataList)
+        private bool ColdAndDark(List<SimData> simDataList)
         {
             SimData data = simDataList.LastOrDefault();
             return data.RadioAltitude > 0
